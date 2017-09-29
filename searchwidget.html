@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
-<!-- AUTHOR'S NOTE 
+<!-- AUTHOR'S NOTE
 
 Special thanks to Jeff Carleson at Sacramento City College whose library search widget was the inspiration for this project. Learn more @ http://scc.losrios.edu/~library/tools/widget/
 
@@ -27,13 +27,13 @@ For questions, comments or concerns please contact eric.kowalik@marquette.edu.
 
 The CSS code below sets the look and feel of the widget, examine the CSS to see what area need to be changed to match your organizations color scheme.
 
-You can put these code in an external stylesheet, but to ease implementation, all the code has been left inline. 
+You can put these code in an external stylesheet, but to ease implementation, all the code has been left inline.
 
 !-->
 
 
 <style type="text/css">
-body 
+body
 {
 	margin: 0;
 	padding: 0;
@@ -41,10 +41,10 @@ body
 	font-family: Verdana, Arial, Helvetica, sans-serif; /* Sets font size and type */
 	color: #ffffff; /* Sets color of the font, currently white. */
 }
-.container 
+.container
 {
-	width: 215px; 	
-	margin: 5px;	
+	width: 215px;
+	margin: 5px;
 }
 ul.tabs {
 	margin: 0;
@@ -59,7 +59,7 @@ ul.tabs li {
 	height: 18px;
 	line-height: 18px;
 	border: 2px solid #EEAA00; /* Sets the border color of the two top tabs */
-	border-bottom: 1px solid #FFFFFF;	
+	border-bottom: 1px solid #FFFFFF;
 	margin-bottom: 10px;
 	margin-right: 4px;
 	background: #FFFFFF;
@@ -71,22 +71,22 @@ ul.tabs li a {
 	display: block;
 	font-size: 1.1em;
 	padding: 0 10px;
-	font-weight: bold; 
+	font-weight: bold;
 }
 ul.tabs li a:hover {
 	/* These variables set the background and color of the link in the two top tabs when a patron hovers over the two top tabs.  */
 	background: #003366;
 	color: #FFFFFF;
-}	
+}
 html ul.tabs li.active, html ul.tabs li.active a:hover, html ul.tabs li.active a   {
 	color: #FFFFFF;
-	background: #003366; /* Sets the background color of the tab that is currently selected. */ 	
+	background: #003366; /* Sets the background color of the tab that is currently selected. */
 	border-bottom: solid #003366;
 }
 .tab_container {
 	border-top: none;
 	clear: both;
-	float: left; 
+	float: left;
 	width: 100%;
 	height: 270px;
 	background: #003366; /* Sets the background color of the tab content, i.e. the container that holds the search box, links, etc. */
@@ -100,7 +100,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover, html ul.tabs li.active a
 	color: #FFFFFF;
 }
 .tab_content h2 {
-	padding-bottom: 5px;	
+	padding-bottom: 5px;
 	font-size: 1.1em;
 }
 ul.links
@@ -119,18 +119,18 @@ ul.links li:before
 /* Sets the bullet before the 3 links to a double right hand arrow. You can easily change this by adding the unicode of the object you would like instead, i.e. *, >, etc.   */
     content: '\00BB';
 }
-img.librarian_chat 
+img.librarian_chat
 {
 /*  Centers the Ask a Librarian image.   */
     display: block;
     margin-left: auto;
-    margin-right: auto 
+    margin-right: auto
 }
-.screenreader 
+.screenreader
 {
 /* Hides the label of the form from view, but allows it to still be seen by screen readers.   */
-	position: absolute; 
-	top:0; 
+	position: absolute;
+	top:0;
 	left:-9999px
 }
 </style>
@@ -146,33 +146,33 @@ img.librarian_chat
 
 The two items in this unordered HTML list compose the two tabs at the top of the widget. Change the text here to whatever you would like, but be aware of long titles which will wrap unless you increase the width of the container.
 
-NOTE: To track the number of times the tabs and links in this widget were used, an Event was set up in Google Analytics to track this, that is why there is an onClick on each link. You can remove the onClicks if you do not wish to use Google Analytics Event tracking. 
+NOTE: To track the number of times the tabs and links in this widget were used, an Event was set up in Google Analytics to track this, that is why there is an onClick on each link. You can remove the onClicks if you do not wish to use Google Analytics Event tracking.
 
 !-->
 
 
 
 	<ul class="tabs">
-		<li><a href="#tab1" onclick="_gaq.push(['_trackEvent', 'D2L_Search_Widget', 'MARQCATplus']);">MARQCAT<em>plus</em></a></li>
-		<li><a href="#tab2" onclick="_gaq.push(['_trackEvent', 'D2L_Search_Widget', 'Databases']);">Databases</a></li>
+		<li><a href="#tab1" onclick="_gaq.push(['_trackEvent', 'EDS_Search_Widget', 'MARQCATplus']);">OneSearch</em></a></li>
+		<li><a href="#tab2" onclick="_gaq.push(['_trackEvent', 'EDS_Search_Widget', 'Databases']);">Databases</a></li>
 	</ul>
 	<!-- END STEP #2 TABS CODE !-->
 	<div class="tab_container">
 		<div id="tab1" class="tab_content">
 			<h2>Search books & more &raquo;</h2>
-			
-			
-			
+
+
+
 			<!-- #3 START EBSCO EDS SEARCH CODE
 The form code for searching the EBSCO EDS is below. You will need to replace this to fit your own set up.
- 
-NOTE: function ebscoPreProcess(myForm) code is at the bottom of the page. 
+
+NOTE: function ebscoPreProcess(myForm) code is at the bottom of the page.
 !-->
 
 
 			<script type="text/javascript">
-//<![CDATA[  
-function ebscoPreProcess(myForm) 
+//<![CDATA[
+function ebscoPreProcess(myForm)
 {
 var selection = document.search.r1;
 for (i=0; i<selection.length; i++)
@@ -201,19 +201,19 @@ for (i=0; i<selection.length; i++)
 				<input name="SORT" value="R" type="hidden">
 				<input value="Search" name="submit" type="submit">
 			</form>
-			
+
 			<!-- END STEP #3 EBSCO EDS SEARCH CODE !-->
-			
-			
-			
-			
+
+
+
+
 			<!-- #4 START LINKS CODE
-The HTML ordered list below contains the 3 links you see on the first tab, Research Guides by Subject, Class reserves (Ares) and Items not at Marquette. Change as needed. 
+The HTML ordered list below contains the 3 links you see on the first tab, Research Guides by Subject, Class reserves (Ares) and Items not at Marquette. Change as needed.
 !-->
-			
-			
-			
-			
+
+
+
+
 			<ul class="links">
 				<li>
 				<a href="http://www.marquette.edu/library/find/researchguides.shtml" target="_blank" onclick="_gaq.push(['_trackEvent', 'D2L_Search_Widget', 'Research Guides']);"> Research Guides by Subject</a>
@@ -225,41 +225,41 @@ The HTML ordered list below contains the 3 links you see on the first tab, Resea
 				<a href="https://marquette.illiad.oclc.org/illiad/logon.html" target="_blank" onclick="_gaq.push(['_trackEvent', 'D2L_Search_Widget', 'Interlibrary Loan']);">Items not at Marquette</a>
 				</li>
 			</ul>
-			
+
 			<!-- END STEP #4 LINKS CODE !-->
-			
-			
-			
+
+
+
 			<!-- #5 START ASK A LIBRARIAN IM CHAT CODE
-The code references Marquette's Library Help chat window and points to the location of the Ask a Librarian image. You will need to change this to reflect your instuions set up. 
+The code references Marquette's Library Help chat window and points to the location of the Ask a Librarian image. You will need to change this to reflect your instuions set up.
 !-->
-			
-			
-			
+
+
+
 			<a href="#" onclick="window.open('http://libraryh3lp.com/chat/mu_askus@chat.libraryh3lp.com?skin=13600&amp;theme=gota&amp;title=Ask+a+Librarian&amp;identity=librarian&amp;sounds=true#', 'chat', 'resizable=1,width=400,height=400'); return false;"><img title="Click here to go to the Ask a Librarian page" alt="Click here to go to the Ask a Librarian page" class="librarian_chat" src="http://www.marquette.edu/library/images/ask.jpg" width="83" height="53"/></a>
-			
-			
-			
+
+
+
 			<!-- END STEP #5 LINKS CODE !-->
-		
+
 		</div>
-		
-		
-		
+
+
+
 		<div id="tab2" class="tab_content">
 			<h2>Choose subject or topic &raquo;</h2>
-		
-		
-		
-			<!-- #6 START DATABASE LIST DROP DOWN CODE
-These drop down options take patrons to Marquette's subject or topic database page lists which are in LibGuides. 
 
-NOTE: The jQuery code that opens the link in a new window when the patron hits Go is at the bottom of the page. 
+
+
+			<!-- #6 START DATABASE LIST DROP DOWN CODE
+These drop down options take patrons to Marquette's subject or topic database page lists which are in LibGuides.
+
+NOTE: The jQuery code that opens the link in a new window when the patron hits Go is at the bottom of the page.
 
 !-->
 
 			<form name="databases">
-				
+
 				<label for="databases-list">
 <span class="screenreader">View Subject Databases</span></label>
 				<select name="databases-list" id="databases-list" style="width: 190px;">
@@ -349,7 +349,7 @@ NOTE: The jQuery code that opens the link in a new window when the patron hits G
 			<!-- END STEP #6 DATABASE LIST DROP DOWN CODE !-->
 
 			<!-- #7 START LINKS CODE
-The HTML ordered list below contains the 3 links you see on the first tab, Research Guides by Subject, Class reserves (Ares) and Items not at Marquette. Change as needed. 
+The HTML ordered list below contains the 3 links you see on the first tab, Research Guides by Subject, Class reserves (Ares) and Items not at Marquette. Change as needed.
 !-->
 
 			<ul class="links">
@@ -367,7 +367,7 @@ The HTML ordered list below contains the 3 links you see on the first tab, Resea
 			<!-- END STEP #7 LINKS CODE !-->
 
 			<!-- #8 START ASK A LIBRARIAN IM CHAT CODE
-The code references Marquette's Library Help chat window and points to the location of the Ask a Librarian image. You will need to change this to reflect your instuions set up. 
+The code references Marquette's Library Help chat window and points to the location of the Ask a Librarian image. You will need to change this to reflect your instuions set up.
 !-->
 
 			<a href="#" onclick="window.open('http://libraryh3lp.com/chat/mu_askus@chat.libraryh3lp.com?skin=13600&amp;theme=gota&amp;title=Ask+a+Librarian&amp;identity=librarian&amp;sounds=true#', 'chat', 'resizable=1,width=400,height=400'); return false;"><img title="Click here to go to the Ask a Librarian page" alt="Click here to go to the Ask a Librarian page" class="librarian_chat" src="http://www.marquette.edu/library/images/ask.jpg" width="83" height="53"/></a>
@@ -407,10 +407,10 @@ $(document).ready(function() {
 	});
 
 
-$('#Submit').click(function() 
-{ 
+$('#Submit').click(function()
+{
 	var Link = $('#databases-list').val();
-	window.open(Link,'_blank'); 
+	window.open(Link,'_blank');
 });
 });
 </script>
